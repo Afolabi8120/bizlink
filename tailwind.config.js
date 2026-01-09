@@ -3,10 +3,10 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        primary: '#1A73E8',
-        secondary: '#FF6F00',
-        dashboardPrimary: '#0F172A',
-        dashboardSecondary: '#F1F5F9'
+        primary: '#1E40AF', 
+        secondary: '#F97316',
+        dashboardPrimary: '#10B981',
+        dashboardSecondary: '#F3F4F6'
       },
       borderRadius: {
         none: '0px',
