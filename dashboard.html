@@ -19,8 +19,7 @@
   <aside id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-50">
     <div class="flex items-center justify-between px-4 py-4 border-b border-gray-200">
       <div class="flex items-center space-x-2">
-        <img src="assets/images/svg/bizlink.svg" alt="Logo" class="w-8 h-8" />
-        <span class="font-bold text-xl text-blue-700">Vendor Panel</span>
+        <img src="assets/images/svg/bizlink.svg" alt="Logo" class="w-12 h-12" />
       </div>
       <!-- Close button for mobile -->
       <button class="md:hidden" onclick="toggleSidebar()" aria-label="Close menu">
@@ -72,26 +71,16 @@
   <div class="flex-1 flex flex-col ml-0 md:ml-64 transition-all duration-300 overflow-y-auto">
     <!-- Header -->
     <header class="flex items-center justify-between px-6 py-4 bg-white border-b border-gray-200">
-      <div class="flex items-center space-x-2">
-        <h1 class="text-xl font-bold text-gray-700">Dashboard</h1>
-        <!-- Vendor Info -->
-        <div class="flex items-center space-x-2 ml-4">
-          <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center font-semibold text-gray-600">JD</div>
-          <span class="font-medium text-gray-700">John Doe</span>
-        </div>
-      </div>
-      <!-- Optional profile/settings icon -->
+      <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center font-semibold text-gray-600">JD</div>
       <div>
-        <button class="p-2 rounded-full hover:bg-gray-100" aria-label="Profile">
-          <i class="ri-user-line text-xl text-gray-600"></i>
-        </button>
+        <i class="ri-notification-3-line text-xl text-gray-600"></i>
       </div>
     </header>
 
     <!-- Content Area -->
-    <main class="p-6 space-y-6">
+    <main class="p-6 space-y-6 mt-6">
       <!-- Wallet Overview Card -->
-      <div class="bg-green-800 rounded-2xl p-6 text-white relative overflow-hidden shadow-lg">
+      <div class="bg-blue-700 rounded-2xl p-6 text-white relative overflow-hidden shadow-lg">
         <div class="absolute inset-0 opacity-20 bg-gradient-to-br from-green-400 to-green-900"></div>
         <div class="relative z-10 flex justify-between items-start mb-4">
           <div>
@@ -105,15 +94,15 @@
           <span class="text-xs bg-white/20 px-3 py-1 rounded-full">NGN</span>
         </div>
         <!-- Buttons -->
-        <div class="grid grid-cols-2 gap-4 bg-green-900/60 rounded-xl p-4">
+        <div class="grid grid-cols-2 gap-4 bg-blue-900/60 rounded-xl p-4">
           <a href="settings" class="flex flex-col items-center gap-1">
-            <div class="bg-green-600 w-12 h-12 rounded-full flex items-center justify-center">
+            <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center">
               <i class="ri-download-2-line text-xl"></i>
             </div>
             <span class="text-xs">Deposit</span>
           </a>
           <a href="transactions" class="flex flex-col items-center gap-1">
-            <div class="bg-green-600 w-12 h-12 rounded-full flex items-center justify-center">
+            <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center">
               <i class="ri-file-list-3-line text-xl"></i>
             </div>
             <span class="text-xs">History</span>

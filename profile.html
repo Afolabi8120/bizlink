@@ -1,30 +1,18 @@
-  <?php 
-    include('../core/validate/profile.php');
-    $pageTitle = "Profile";
-
-    if(!isset($_SESSION['user']) || empty($_SESSION['user'])){
-      if($admin->validateRememberMeToken()){
-
-      }else{
-        $admin->redirect_to('logout');
-      }
-    }
-
-    if(isset($_SESSION['user'])){
-      $user_id = $_SESSION['user'];
-      $getUser = $admin->fetchSingle('tbluser','id',$user_id);
-
-      if(!$getUser){
-        $admin->redirect_to('logout');
-      }
-    }
-
-  ?>
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <?php include('../include/head.php'); ?>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta name="theme-color" content="#1A73E8" />
+   <title>BizLink</title>
+   <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+   <script src="tailwind.config.js"></script>
+   <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
   <body class="bg-gray-50 min-h-screen">
     <header class="border-b border-gray-200 bg-white">
       <?php include('../include/header.php'); ?>
@@ -86,8 +74,6 @@
 
       </div>
     </main>
-
-    <?php include('../include/script.php'); ?> 
 
   </body>
 
