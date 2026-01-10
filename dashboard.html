@@ -79,19 +79,19 @@
       <div class="flex overflow-x-auto px-4 space-x-4 pb-4">
         <!-- Example categories -->
         <div class="flex-shrink-0 w-20 flex flex-col items-center space-y-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg">
-          <div class="bg-primary p-3 rounded-full"><i class="ri-phone-fill text-blue-600 text-xl"></i></div>
+          <div class="bg-gray-100 p-3 rounded-full"><i class="ri-phone-fill text-primary text-xl"></i></div>
           <span class="text-xs font-bold text-center">Phones</span>
         </div>
         <div class="flex-shrink-0 w-20 flex flex-col items-center space-y-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg">
-          <div class="bg-primary p-3 rounded-full"><i class="ri-macbook-fill text-blue-600 text-xl"></i></div>
+          <div class="bg-gray-100 p-3 rounded-full"><i class="ri-macbook-fill text-primary text-xl"></i></div>
           <span class="text-xs font-bold text-center">Laptops</span>
         </div>
         <div class="flex-shrink-0 w-20 flex flex-col items-center space-y-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg">
-          <div class="bg-primary p-3 rounded-full"><i class="ri-tv-fill text-blue-600 text-xl"></i></div>
+          <div class="bg-gray-100 p-3 rounded-full"><i class="ri-tv-fill text-primary text-xl"></i></div>
           <span class="text-xs font-bold text-center">TVs</span>
         </div>
         <div class="flex-shrink-0 w-20 flex flex-col items-center space-y-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg">
-          <div class="bg-primary p-3 rounded-full"><i class="ri-headphone-fill text-blue-600 text-xl"></i></div>
+          <div class="bg-gray-100 p-3 rounded-full"><i class="ri-headphone-fill text-primary text-xl"></i></div>
           <span class="text-xs font-bold text-center">Audio</span>
         </div>
       </div>
@@ -102,10 +102,10 @@
           <a href="#" class="text-sm font-semibold text-primary hover:underline">See All</a>
         </div>
         <div class="flex space-x-2 mb-4" id="justForYouFilters">
-          <button class="px-3 py-2 border border-gray-300 rounded-full text-xs font-bold hover:bg-blue-600 hover:text-white active:bg-blue-600 active:text-white" data-filter="all">All</button>
-          <button class="px-3 py-2 border border-gray-300 rounded-full text-xs font-bold hover:bg-blue-600 hover:text-white" data-filter="popular">Popular</button>
-          <button class="px-3 py-2 border border-gray-300 rounded-full text-xs font-bold hover:bg-blue-600 hover:text-white" data-filter="newest">Newest</button>
-          <button class="px-3 py-2 border border-gray-300 rounded-full text-xs font-bold hover:bg-blue-600 hover:text-white" data-filter="mostSell">Most Sell</button>
+          <button class="px-3 py-2 border border-gray-300 rounded-full text-xs font-bold hover:bg-primary hover:text-white active:bg-primary active:text-white" data-filter="all">All</button>
+          <button class="px-3 py-2 border border-gray-300 rounded-full text-xs font-bold hover:bg-primary hover:text-white" data-filter="popular">Popular</button>
+          <button class="px-3 py-2 border border-gray-300 rounded-full text-xs font-bold hover:bg-primary hover:text-white" data-filter="newest">Newest</button>
+          <button class="px-3 py-2 border border-gray-300 rounded-full text-xs font-bold hover:bg-primary hover:text-white" data-filter="mostSell">Most Sell</button>
         </div>
       </div>
 
@@ -165,27 +165,27 @@
 
   </div>
 
-  <div class="fixed bottom-4 left-1/2 transform -translate-x-1/2 h-24 z-50 flex md:hidden">
-    <div class="flex bg-white rounded-lg shadow-lg px-8 py-4 space-x-6 transition-all duration-300 hover:bg-light cursor-pointer">
-      <button class="flex flex-col items-center text-gray-600 hover:text-light transition" aria-label="Home">
-        <i class="ri-home-line text-2xl"></i>
-        <span class="text-sm">Home</span>
+  <div class="fixed bottom-4 left-1/2 transform -translate-x-1/2 h-32 w-[90%] max-w-6xl z-50 flex md:hidden">
+    <div class="flex bg-white rounded-lg shadow-lg px-10 py-5 space-x-8 transition-all duration-300 hover:bg-blue-100 cursor-pointer w-full justify-center">
+      <button class="flex flex-col items-center text-gray-600 hover:text-blue-600 transition" aria-label="Home">
+        <i class="ri-home-line text-3xl"></i>
+        <span class="text-lg">Home</span>
       </button>
-      <button class="flex flex-col items-center text-gray-600 hover:text-light transition" aria-label="Wishlist">
-        <i class="ri-heart-line text-2xl"></i>
-        <span class="text-sm">Wishlist</span>
+      <button class="flex flex-col items-center text-gray-600 hover:text-blue-600 transition" aria-label="Wishlist">
+        <i class="ri-heart-line text-3xl"></i>
+        <span class="text-lg">Wishlist</span>
       </button>
-      <button class="flex flex-col items-center text-gray-600 hover:text-light transition" aria-label="Cart">
-        <i class="ri-shopping-cart-line text-2xl"></i>
-        <span class="text-sm">Cart</span>
+      <button class="flex flex-col items-center text-gray-600 hover:text-blue-600 transition" aria-label="Cart">
+        <i class="ri-shopping-cart-line text-3xl"></i>
+        <span class="text-lg">Cart</span>
       </button>
-      <button class="flex flex-col items-center text-gray-600 hover:text-light transition" aria-label="Chat">
-        <i class="ri-chat-1-line text-2xl"></i>
-        <span class="text-sm">Chat</span>
+      <button class="flex flex-col items-center text-gray-600 hover:text-blue-600 transition" aria-label="Chat">
+        <i class="ri-chat-1-line text-3xl"></i>
+        <span class="text-lg">Chat</span>
       </button>
-      <button class="flex flex-col items-center text-gray-600 hover:text-light transition" aria-label="Settings">
-        <i class="ri-settings-3-line text-2xl"></i>
-        <span class="text-sm">Settings</span>
+      <button class="flex flex-col items-center text-gray-600 hover:text-blue-600 transition" aria-label="Settings">
+        <i class="ri-settings-3-line text-3xl"></i>
+        <span class="text-lg">Settings</span>
       </button>
     </div>
   </div>
