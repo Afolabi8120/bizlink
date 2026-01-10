@@ -8,7 +8,7 @@
   <path
     d="M34 48a10 10 0 0 1 10-10h8"
     fill="none"
-    stroke="#1E40AF"
+    stroke="#00BCD4"
     stroke-width="2"
     stroke-linecap="round"
   />
@@ -29,6 +29,6 @@
     font-family="Inter, Segoe UI, Arial, sans-serif"
     font-weight="700"
   >
-    <tspan fill="#000000">Biz</tspan><tspan fill="#1E40AF">Link</tspan>
+    <tspan fill="#000000">Biz</tspan><tspan fill="#00BCD4">Link</tspan>
   </text>
 </svg>

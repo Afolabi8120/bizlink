@@ -5,8 +5,8 @@ tailwind.config = {
       colors: {
         primary: '#00BCD4', 
         secondary: '#FF9800',
-        dashboardPrimary: '#10B981',
-        dashboardSecondary: '#F3F4F6'
+        light: '#4DD0E1',
+        dark: '#0097A7'
       },
       borderRadius: {
         none: '0px',
