@@ -4,7 +4,7 @@ tailwind.config = {
     extend: {
       colors: {
         primary: '#00BCD4', 
-        secondary: '#F97316',
+        secondary: '#FF9800',
         dashboardPrimary: '#10B981',
         dashboardSecondary: '#F3F4F6'
       },
