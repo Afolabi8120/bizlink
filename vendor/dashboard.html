@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta name="theme-color" content="#1A73E8" />
+   <title>BizLink</title>
+   <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+   <script src="tailwind.config.js"></script>
+   <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="flex items-center justify-center h-full bg-gray-100">
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-50">
+    <div class="flex items-center justify-between px-4 py-4 border-b border-gray-200">
+      <div class="flex items-center space-x-2">
+        <img src="assets/images/svg/bizlink.svg" alt="Logo" class="w-12 h-12" />
+      </div>
+      <!-- Close button for mobile -->
+      <button class="md:hidden" onclick="toggleSidebar()" aria-label="Close menu">
+        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <!-- Navigation -->
+    <nav class="p-4 space-y-4">
+      <a href="#" class="flex items-center p-2 rounded hover:bg-gray-100 transition">
+        <i class="ri-home-2-line mr-2"></i> Dashboard
+      </a>
+      <a href="#" class="flex items-center p-2 rounded hover:bg-gray-100 transition">
+        <i class="ri-shopping-bag-line mr-2"></i> Products
+      </a>
+      <a href="#" class="flex items-center p-2 rounded hover:bg-gray-100 transition">
+        <i class="ri-apps-2-line mr-2"></i> Categories
+      </a>
+      <a href="#" class="flex items-center p-2 rounded hover:bg-gray-100 transition">
+        <i class="ri-clipboard-line mr-2"></i> Orders
+      </a>
+      <a href="#" class="flex items-center p-2 rounded hover:bg-gray-100 transition">
+        <i class="ri-group-line mr-2"></i> Customers
+      </a>
+      <a href="#" class="flex items-center p-2 rounded hover:bg-gray-100 transition">
+        <i class="ri-bar-chart-line mr-2"></i> Analytics
+      </a>
+      <a href="#" class="flex items-center p-2 rounded hover:bg-gray-100 transition">
+        <i class="ri-wallet-3-line mr-2"></i> BizLink Wallet
+      </a>
+      <a href="#" class="flex items-center p-2 rounded hover:bg-gray-100 transition">
+        <i class="ri-settings-3-line mr-2"></i> Settings
+      </a>
+      <a href="#" class="flex items-center p-2 rounded hover:bg-gray-100 transition">
+        <i class="ri-user-line mr-2"></i> Profile
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Mobile Hamburger -->
+  <button class="fixed top-4 left-4 z-50 md:hidden p-2 bg-white rounded shadow-md" onclick="toggleSidebar()" aria-label="Open menu">
+    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+
+  <!-- Main Content -->
+  <div class="flex-1 flex flex-col ml-0 md:ml-64 transition-all duration-300 overflow-y-auto">
+    <!-- Header -->
+    <header class="flex items-center justify-between px-6 py-4 bg-white border-b border-gray-200">
+      <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center font-semibold text-gray-600">JD</div>
+      <div>
+        <i class="ri-notification-3-line text-xl text-gray-600"></i>
+      </div>
+    </header>
+
+    <!-- Content Area -->
+    <main class="p-6 space-y-6 mt-6">
+      <!-- Wallet Overview Card -->
+      <div class="bg-blue-700 rounded-2xl p-6 text-white relative overflow-hidden shadow-lg">
+        <div class="absolute inset-0 opacity-20 bg-gradient-to-br from-green-400 to-green-900"></div>
+        <div class="relative z-10 flex justify-between items-start mb-4">
+          <div>
+            <div class="flex items-center space-x-2 mb-2">
+              <span class="text-sm opacity-90">Overview</span>
+              <i id="toggleBalance" class="ri-eye-line text-sm cursor-pointer" title="Show/Hide Balance"></i>
+            </div>
+            <h2 id="walletBalance" class="text-3xl font-bold mb-4">₦ 156,605.00</h2>
+            <input type="hidden" id="realBalance" value="156,605.00" />
+          </div>
+          <span class="text-xs bg-white/20 px-3 py-1 rounded-full">NGN</span>
+        </div>
+        <!-- Buttons -->
+        <div class="grid grid-cols-2 gap-4 bg-blue-900/60 rounded-xl p-4">
+          <a href="settings" class="flex flex-col items-center gap-1">
+            <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center">
+              <i class="ri-download-2-line text-xl"></i>
+            </div>
+            <span class="text-xs">Deposit</span>
+          </a>
+          <a href="transactions" class="flex flex-col items-center gap-1">
+            <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center">
+              <i class="ri-file-list-3-line text-xl"></i>
+            </div>
+            <span class="text-xs">History</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Welcome & Stats -->
+      <div class="bg-white rounded-xl shadow-sm p-6">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+          <div>
+            <p class="text-gray-500 text-sm mb-1">Good Evening!</p>
+            <h2 class="text-2xl font-bold text-gray-800">Welcome back, Temidayo</h2>
+            <!-- Stats grid -->
+            <div class="grid grid-cols-3 gap-4 mt-6">
+              <div class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition">
+                <div class="text-center">
+                  <i class="ri-box-3-line text-xl text-green-700"></i>
+                  <p class="mt-2 text-xl font-semibold">4</p>
+                  <p class="text-xs text-gray-500">Active Plans</p>
+                </div>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition">
+                <div class="text-center">
+                  <i class="ri-truck-line text-xl text-yellow-500"></i>
+                  <p class="mt-2 text-xl font-semibold">6</p>
+                  <p class="text-xs text-gray-500">Deliveries</p>
+                </div>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition">
+                <div class="text-center">
+                  <i class="ri-star-line text-xl text-yellow-500"></i>
+                  <p class="mt-2 text-xl font-semibold">80</p>
+                  <p class="text-xs text-gray-500">Products</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Slider -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden relative h-64 sm:h-80 md:h-96">
+        <div id="slider" class="relative w-full h-full">
+          <!-- Slides -->
+          <div class="absolute inset-0 opacity-100 transition-opacity duration-700">
+            <img src="../assets/FLIER 1.jpg" class="w-full h-full object-cover" alt="Slide 1"/>
+          </div>
+          <div class="absolute inset-0 opacity-0 transition-opacity duration-700">
+            <img src="../assets/FLIER 2.jpg" class="w-full h-full object-cover" alt="Slide 2"/>
+          </div>
+          <div class="absolute inset-0 opacity-0 transition-opacity duration-700">
+            <img src="../assets/FLIER 5.jpg" class="w-full h-full object-cover" alt="Slide 3"/>
+          </div>
+        </div>
+        <!-- Navigation arrows -->
+        <button id="prev" class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 p-2 rounded-full hover:bg-opacity-90">
+          <i class="ri-arrow-left-s-line text-xl"></i>
+        </button>
+        <button id="next" class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 p-2 rounded-full hover:bg-opacity-90">
+          <i class="ri-arrow-right-s-line text-xl"></i>
+        </button>
+        <!-- Dots indicator -->
+        <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2">
+          <span class="w-3 h-3 bg-white bg-opacity-60 rounded-full cursor-pointer"></span>
+          <span class="w-3 h-3 bg-white bg-opacity-60 rounded-full cursor-pointer"></span>
+          <span class="w-3 h-3 bg-white bg-opacity-60 rounded-full cursor-pointer"></span>
+        </div>
+      </div>
+
+      <!-- Active Packages -->
+      <div class="mt-6 mb-5">
+        <div class="flex justify-between items-center mb-2">
+          <h2 class="text-sm font-semibold text-gray-800">Active Packages</h2>
+          <a href="subscription" class="text-xs text-green-600 hover:underline">View All</a>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+          <!-- Sample package card -->
+          <a href="box-details?pid=1" class="border border-gray-100 rounded-md p-3 flex flex-col justify-between hover:shadow bg-gray-50 transition">
+            <div>
+              <h3 class="text-sm font-semibold mb-1 truncate">Basic Box</h3>
+              <p class="text-xs text-gray-600 leading-tight line-clamp-2">Personalized subscription box tailored to your specific preferences. Fully customizable items. Flexible delivery schedule.</p>
+            </div>
+            <div class="mt-2 flex justify-between items-center">
+              <span class="text-sm font-bold text-green-700">₦20,000.00</span>
+              <span class="text-[11px] text-gray-500">/weekly</span>
+            </div>
+          </a>
+          <!-- Repeat similar cards as needed -->
+        </div>
+        <div class="mt-4 flex justify-center">
+          <a href="subscription" class="bg-green-700 px-4 py-2 text-white rounded-md hover:bg-green-800 text-xs font-semibold">View More</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="fixed bottom-0 inset-x-0 bg-white border-t border-gray-200 flex justify-around items-center h-16 shadow-lg z-50">
+      <a href="dashboard" class="flex flex-col items-center text-gray-600 hover:text-green-600 text-sm">
+        <i class="ri-home-2-line text-xl"></i>
+        <span>Home</span>
+      </a>
+      <a href="shop" class="flex flex-col items-center text-gray-600 hover:text-green-600 text-sm">
+        <i class="ri-store-line text-xl"></i>
+        <span>Shop</span>
+      </a>
+      <a href="cart" class="flex flex-col items-center text-gray-600 hover:text-green-600 relative text-sm">
+        <i class="ri-shopping-cart-line text-xl"></i>
+        <span>Cart</span>
+        <div id="cartCounter" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">0</div>
+      </a>
+      <a href="subscription" class="flex flex-col items-center text-gray-600 hover:text-green-600 text-sm">
+        <i class="ri-price-tag-3-line text-xl"></i>
+        <span>Plans</span>
+      </a>
+      <a href="orders" class="flex flex-col items-center text-gray-600 hover:text-green-600 text-sm">
+        <i class="ri-todo-line text-xl"></i>
+        <span>Orders</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Scripts for slider and notifications -->
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('-translate-x-full');
+    }
+    // Toggle sidebar
+    // (Already included in inline script above)
+
+    // Slider logic
+    const slides = document.querySelectorAll('#slider > div');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.opacity = i === index ? '1' : '0';
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('bg-white', i === index);
+        dot.classList.toggle('bg-opacity-90', i === index);
+        dot.classList.toggle('bg-opacity-40', i !== index);
+      });
+    }
+
+    document.getElementById('prev').addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    });
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        currentSlide = i;
+        showSlide(currentSlide);
+      });
+    });
+
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }, 5000);
+
+    showSlide(currentSlide);
+
+    // Wallet toggle
+    const toggleBalance = document.getElementById('toggleBalance');
+    const walletBalance = document.getElementById('walletBalance');
+    const realBalance = document.getElementById('realBalance');
+
+    let walletHidden = localStorage.getItem('walletHidden') === 'true';
+
+    function updateBalance() {
+      if (walletHidden) {
+        walletBalance.innerHTML = "₦ ****";
+        toggleBalance.classList.remove("ri-eye-line");
+        toggleBalance.classList.add("ri-eye-off-line");
+      } else {
+        walletBalance.innerHTML = "₦ " + realBalance.value;
+        toggleBalance.classList.remove("ri-eye-off-line");
+        toggleBalance.classList.add("ri-eye-line");
+      }
+    }
+
+    toggleBalance.addEventListener('click', () => {
+      walletHidden = !walletHidden;
+      localStorage.setItem('walletHidden', walletHidden);
+      updateBalance();
+    });
+
+    // Initialize balance display
+    updateBalance();
+
+  </script>
+</body>
+</html>
