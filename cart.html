@@ -4,7 +4,7 @@
  <meta charset="UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  <meta name="theme-color" content="#1A73E8" />
- <title>Invite - BizLink</title>
+ <title>Cart - BizLink</title>
  <script src="https://cdn.tailwindcss.com"></script>
  <link rel="preconnect" href="https://fonts.googleapis.com" />
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,121 +19,146 @@
 
     <!-- Header -->
     <header class="flex items-center justify-center px-6 py-4 bg-gray-100 border-b border-gray-200 relative">
-      <a href="settings.html" class="absolute top-4 left-4 text-gray-600 hover:text-light" aria-label="Back to settings">
+      <a href="dashboard.html" class="absolute top-4 left-4 text-gray-600 hover:text-light" aria-label="Back to settings">
         <i class="ri-arrow-left-line text-xl"></i>
       </a>
-      <h1 class="font-bold text-black-600 text-lg">Invite Friend</h1>
+      <h1 class="font-bold text-black-600 text-lg">Cart</h1>
     </header>
 
-    <div class="max-w-3xl mx-auto p-4">
-      <!-- Swipeable Product Card -->
-      <div class="relative group" id="swipeContainer">
-        <!-- Main Card -->
-        <div class="flex bg-gray-200 rounded-lg overflow-hidden transition-transform duration-300" id="productCard">
-          <!-- Product Image -->
-          <div class="w-24 flex-shrink-0">
-            <img src="https://via.placeholder.com/100" alt="Product" class="w-full h-full object-cover" />
+    <div class="w-full mx-auto p-4">
+      <!-- Cart Item Card -->
+      <div class="relative w-full bg-gray-200 rounded-lg flex items-center p-4 hover:shadow-lg transition-shadow duration-300 group mb-2">
+        <!-- Product Image -->
+        <div class="w-24 flex-shrink-0">
+          <img src="assets/images/products/01.png" alt="Product" class="w-full h-full object-cover rounded" />
+        </div>
+        <!-- Product Details -->
+        <div class="flex-1 ml-4 flex flex-col justify-between">
+          <!-- Product Name -->
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Product Name</h3>
+          <!-- Price and Quantity -->
+          <div class="flex justify-between items-center text-md text-gray-600 mb-2">
+            <div>₦1,500 x 2</div>
           </div>
-          <!-- Product Details -->
-          <div class="flex-1 p-4 flex flex-col justify-between">
-            <!-- Product Name -->
-            <div>
-              <h3 class="text-lg font-semibold text-gray-800 mb-2">Product Name</h3>
-              <!-- Price and Quantity -->
-              <div class="flex justify-between items-center text-sm text-gray-600 mb-2">
-                <div>Price: ₦1,500</div>
-                <div>Qty: 2</div>
-              </div>
-            </div>
-            <!-- Quantity Controls -->
-            <div class="flex items-center space-x-2">
-              <button class="border border-gray-400 rounded px-2 py-1 hover:bg-gray-300 transition" id="decreaseBtn">-</button>
-              <input type="text" value="2" class="w-12 text-center border border-gray-300 rounded py-1" id="quantityInput" />
-              <button class="border border-gray-400 rounded px-2 py-1 hover:bg-gray-300 transition" id="increaseBtn">+</button>
-            </div>
+          <!-- Quantity Controls -->
+          <div class="flex items-center space-x-2 mt-2">
+            <button class="border border-gray-400 rounded px-2 py-1 hover:bg-gray-300 transition" id="decreaseBtn">-</button>
+            <input type="text" value="2" class="w-12 text-center border border-gray-300 rounded py-1" id="quantityInput" />
+            <button class="border border-gray-400 rounded px-2 py-1 hover:bg-gray-300 transition" id="increaseBtn">+</button>
+            <button class="border border-red-400 rounded px-2 py-1 hover:bg-red-300 transition" id="deleteBtn">
+              <i class="ri-delete-bin-line text-red-600 text-md"></i>
+            </button>
           </div>
         </div>
-        <!-- Delete Mini Card (Initially Hidden) -->
-        <div class="absolute top-0 right-0 h-full w-24 bg-red-200 rounded-lg flex items-center justify-center transition-transform duration-300 translate-x-full" id="deleteCard">
-          <button class="text-red-600 text-xl" id="deleteBtn" title="Delete">
-            <i class="ri-delete-bin-line"></i>
+      </div>
+
+      <div class="relative w-full bg-gray-200 rounded-lg flex items-center p-4 hover:shadow-lg transition-shadow duration-300 group">
+        <!-- Product Image -->
+        <div class="w-24 flex-shrink-0">
+          <img src="assets/images/products/05.png" alt="Product" class="w-full h-full object-cover rounded" />
+        </div>
+        <!-- Product Details -->
+        <div class="flex-1 ml-4 flex flex-col justify-between">
+          <!-- Product Name -->
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Product Name</h3>
+          <!-- Price and Quantity -->
+          <div class="flex justify-between items-center text-md text-gray-600 mb-2">
+            <div>₦1,500 x 2</div>
+          </div>
+          <!-- Quantity Controls -->
+          <div class="flex items-center space-x-2 mt-2">
+            <button class="border border-gray-400 rounded px-2 py-1 hover:bg-gray-300 transition" id="decreaseBtn">-</button>
+            <input type="text" value="2" class="w-12 text-center border border-gray-300 rounded py-1" id="quantityInput" />
+            <button class="border border-gray-400 rounded px-2 py-1 hover:bg-gray-300 transition" id="increaseBtn">+</button>
+            <button class="border border-red-400 rounded px-2 py-1 hover:bg-red-300 transition" id="deleteBtn">
+              <i class="ri-delete-bin-line text-red-600 text-md"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="w-full mx-auto p-4">
+      <div class="bg-gray-300 bg-opacity-50 rounded-sm shadow-lg max-w-3xl mx-auto p-4">
+        <!-- Promo Code Input and Button Merged -->
+        <div class="flex">
+          <input
+            type="text"
+            placeholder="Promo Code"
+            class="flex-1 border border-gray-300 rounded-l-sm px-2 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+            id="promoCodeInput"
+          />
+          <button
+            class="bg-primary text-white px-2 py-2 rounded-r-sm hover:bg-primary transition"
+            id="applyPromoBtn"
+          >
+            Apply
           </button>
         </div>
       </div>
     </div>
 
+    <div class="w-full mx-auto p-4">
+      <!-- Summary Card -->
+      <div class="bg-gray-100 rounded-sm shadow-md p-6">
+        <!-- Total Items -->
+        <div class="flex justify-between mb-3">
+          <span class="text-gray-700 font-medium">Total Items</span>
+          <span class="text-gray-900 font-bold">3</span>
+        </div>
+        <!-- Amount -->
+        <div class="flex justify-between mb-3">
+          <span class="text-gray-700 font-medium">Amount</span>
+          <span class="text-gray-900 font-bold">₦4,500</span>
+        </div>
+        <!-- Delivery Charges -->
+        <div class="flex justify-between mb-3">
+          <span class="text-gray-700 font-medium">Delivery Charges</span>
+          <span class="text-gray-900 font-bold">₦500</span>
+        </div>
+        <!-- Promo -->
+        <div class="flex justify-between mb-3">
+          <span class="text-gray-700 font-medium">Promo</span>
+          <span class="text-gray-900 font-bold">-₦200</span>
+        </div>
+        <!-- Total Amount -->
+        <div class="flex justify-between mt-4 border-t pt-4">
+          <span class="text-lg font-bold text-gray-800">Total Amount</span>
+          <span class="text-lg font-bold text-gray-800">₦4,800</span>
+        </div>
+
+        <div class="mt-4 border-t pt-4">
+          <a href="#" class="w-full bg-primary text-white font-bold py-2 px-4 rounded-sm hover:bg-light hover:text-white transition">Checkout</a>
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <!-- JavaScript for swipe effect -->
-<script>
-  const container = document.getElementById('swipeContainer');
-  const mainCard = document.getElementById('productCard');
-  const deleteCard = document.getElementById('deleteCard');
-  let isSwiped = false;
-  let startX = 0;
+  <!-- JavaScript for quantity controls -->
+  <script>
+    const decreaseBtn = document.getElementById('decreaseBtn');
+    const increaseBtn = document.getElementById('increaseBtn');
+    const quantityInput = document.getElementById('quantityInput');
 
-  // Handle touch/mouse start
-  container.addEventListener('mousedown', startSwipe);
-  container.addEventListener('touchstart', startSwipe);
-
-  function startSwipe(e) {
-    startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-
-    const onMove = (eMove) => {
-      const currentX = eMove.type.includes('touch') ? eMove.touches[0].clientX : eMove.clientX;
-      const deltaX = currentX - startX;
-
-      if (deltaX < -50 && !isSwiped) {
-        // Swipe left - show delete card
-        mainCard.classList.add('translate-x-[-100px]');
-        deleteCard.classList.remove('translate-x-full');
-        isSwiped = true;
-      } else if (deltaX > 50 && isSwiped) {
-        // Swipe right - hide delete card
-        mainCard.classList.remove('translate-x-[-100px]');
-        deleteCard.classList.add('translate-x-full');
-        isSwiped = false;
+    decreaseBtn.addEventListener('click', () => {
+      let qty = parseInt(quantityInput.value);
+      if (qty > 1) {
+        qty--;
+        quantityInput.value = qty;
       }
-    };
+    });
 
-    const onUp = () => {
-      document.removeEventListener('mousemove', onMove);
-      document.removeEventListener('touchmove', onMove);
-      document.removeEventListener('mouseup', onUp);
-      document.removeEventListener('touchend', onUp);
-    };
-
-    document.addEventListener('mousemove', onMove);
-    document.addEventListener('touchmove', onMove);
-    document.addEventListener('mouseup', onUp);
-    document.addEventListener('touchend', onUp);
-  }
-
-  // Delete button action
-  document.getElementById('deleteBtn').addEventListener('click', () => {
-    alert('Item deleted');
-    // You can remove the item from DOM here if needed
-  });
-
-  // Quantity controls
-  const decreaseBtn = document.getElementById('decreaseBtn');
-  const increaseBtn = document.getElementById('increaseBtn');
-  const quantityInput = document.getElementById('quantityInput');
-
-  decreaseBtn.addEventListener('click', () => {
-    let qty = parseInt(quantityInput.value);
-    if (qty > 1) {
-      qty--;
+    increaseBtn.addEventListener('click', () => {
+      let qty = parseInt(quantityInput.value);
+      qty++;
       quantityInput.value = qty;
-    }
-  });
+    });
 
-  increaseBtn.addEventListener('click', () => {
-    let qty = parseInt(quantityInput.value);
-    qty++;
-    quantityInput.value = qty;
-  });
-</script>
+  </script>
 
     
 </body>
