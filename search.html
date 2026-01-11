@@ -18,12 +18,15 @@
   <div class="flex-1 flex flex-col w-full transition-all duration-300 overflow-x-hidden">
 
     <!-- Header: Updated to align right -->
-    <header class="flex items-center justify-between px-6 py-4 bg-gray-100 border-b border-gray-200">
-      <div></div>
-      <!-- Right side: initials + notification icon -->
+    <header class="flex items-center justify-center px-6 py-4 bg-gray-100 border-b border-gray-200">
+      <div>
+        <a href="dashboard.html" class="absolute top-4 left-4 text-gray-600 hover:text-light" aria-label="Back to login">
+            <i class="ri-arrow-left-line text-xl"></i>
+        </a>
+      </div>
+      
       <div class="flex items-center space-x-4">
-        <i class="ri-notification-3-line text-xl text-gray-600"></i>
-        <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center font-semibold text-gray-600 text-lg">JD</div>
+        <span class="font-bold text-black-600 text-lg">Search</span>
       </div>
     </header>
     
@@ -48,64 +51,10 @@
         </div>
       </div>
 
-      <!-- Sales Ads Slider -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden relative h-60 sm:h-65 md:h-75">
-        <div id="salesSlider" class="relative w-full h-full">
-          <!-- Slides -->
-          <div class="absolute inset-0 opacity-100 transition-opacity duration-700">
-            <img src="assets/images/gallery/05.png" class="w-full h-full object-cover" alt="Sale 1" />
-          </div>
-          <div class="absolute inset-0 opacity-0 transition-opacity duration-700">
-            <img src="assets/images/gallery/06.png" class="w-full h-full object-cover" alt="Sale 2" />
-          </div>
-          <div class="absolute inset-0 opacity-0 transition-opacity duration-700">
-            <img src="assets/images/gallery/07.png" class="w-full h-full object-cover" alt="Sale 3" />
-          </div>
-        </div>
-        <!-- Navigation -->
-        <button id="salesPrev" class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 p-2 rounded-full hover:bg-opacity-90">
-          <i class="ri-arrow-left-s-line text-xl"></i>
-        </button>
-        <button id="salesNext" class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-60 p-2 rounded-full hover:bg-opacity-90">
-          <i class="ri-arrow-right-s-line text-xl"></i>
-        </button>
-      </div>
-
-      <!-- Categories -->
-      <div class="flex justify-between items-center mb-2 px-4">
-        <h2 class="text-lg font-bold text-gray-800">Categories</h2>
-        <a href="#" class="text-sm font-semibold text-primary hover:underline">See All</a>
-      </div>
-      <div class="flex overflow-x-auto px-4 space-x-4 pb-4">
-        <!-- Example categories -->
-        <div class="flex-shrink-0 w-20 flex flex-col items-center space-y-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg">
-          <div class="bg-gray-100 p-3 rounded-full"><i class="ri-phone-fill text-primary text-xl"></i></div>
-          <span class="text-xs font-bold text-center">Phones</span>
-        </div>
-        <div class="flex-shrink-0 w-20 flex flex-col items-center space-y-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg">
-          <div class="bg-gray-100 p-3 rounded-full"><i class="ri-macbook-fill text-primary text-xl"></i></div>
-          <span class="text-xs font-bold text-center">Laptops</span>
-        </div>
-        <div class="flex-shrink-0 w-20 flex flex-col items-center space-y-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg">
-          <div class="bg-gray-100 p-3 rounded-full"><i class="ri-tv-fill text-primary text-xl"></i></div>
-          <span class="text-xs font-bold text-center">TVs</span>
-        </div>
-        <div class="flex-shrink-0 w-20 flex flex-col items-center space-y-2 cursor-pointer hover:bg-gray-100 p-2 rounded-lg">
-          <div class="bg-gray-100 p-3 rounded-full"><i class="ri-headphone-fill text-primary text-xl"></i></div>
-          <span class="text-xs font-bold text-center">Audio</span>
-        </div>
-      </div>
-
       <div class="px-4">
         <div class="flex justify-between items-center mb-2">
-          <h2 class="text-lg font-bold text-gray-800">Just For You</h2>
-          <a href="#" class="text-sm font-semibold text-primary hover:underline">See All</a>
-        </div>
-        <div class="flex space-x-2 mb-4" id="justForYouFilters">
-          <button class="px-3 py-2 border border-gray-300 rounded-full text-xs font-bold hover:bg-primary hover:text-white active:bg-primary active:text-white" data-filter="all">All</button>
-          <button class="px-3 py-2 border border-gray-300 rounded-full text-xs font-bold hover:bg-primary hover:text-white" data-filter="popular">Popular</button>
-          <button class="px-3 py-2 border border-gray-300 rounded-full text-xs font-bold hover:bg-primary hover:text-white" data-filter="newest">Newest</button>
-          <button class="px-3 py-2 border border-gray-300 rounded-full text-xs font-bold hover:bg-primary hover:text-white" data-filter="mostSell">Most Sell</button>
+          <h2 class="text-lg font-bold text-gray-800">Result for iPhone</h2>
+          <a href="#" class="text-sm font-semibold text-primary ">67 Founds</a>
         </div>
       </div>
 
@@ -198,28 +147,6 @@
 
   <!-- Scripts -->
   <script>
-
-    // Slider for sales ads
-    const salesSlides = document.querySelectorAll('#salesSlider > div');
-    let currentSalesSlide = 0;
-    const showSalesSlide = (index) => {
-      salesSlides.forEach((slide, i) => {
-        slide.style.opacity = i === index ? '1' : '0';
-      });
-    };
-    document.getElementById('salesPrev').addEventListener('click', () => {
-      currentSalesSlide = (currentSalesSlide - 1 + salesSlides.length) % salesSlides.length;
-      showSalesSlide(currentSalesSlide);
-    });
-    document.getElementById('salesNext').addEventListener('click', () => {
-      currentSalesSlide = (currentSalesSlide + 1) % salesSlides.length;
-      showSalesSlide(currentSalesSlide);
-    });
-    setInterval(() => {
-      currentSalesSlide = (currentSalesSlide + 1) % salesSlides.length;
-      showSalesSlide(currentSalesSlide);
-    }, 5000);
-    showSalesSlide(currentSalesSlide);
 
     // Dropdown toggle for filter
     const filterBtn = document.getElementById('filterDropdownBtn');
