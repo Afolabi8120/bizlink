@@ -1,80 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <meta name="theme-color" content="#1A73E8" />
-   <title>BizLink</title>
-   <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-   <link rel="preconnect" href="https://fonts.googleapis.com" />
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-   <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
-   <script src="tailwind.config.js"></script>
-   <link rel="stylesheet" href="assets/css/styles.css" />
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="theme-color" content="#1A73E8" />
+ <title>Settings - BizLink</title>
+ <script src="https://cdn.tailwindcss.com"></script>
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+ <script src="tailwind.config.js"></script>
 </head>
-  <body class="bg-gray-50 min-h-screen">
-    <header class="border-b border-gray-200 bg-white">
-      <?php include('../include/header.php'); ?>
-    </header>
+<body class="bg-white-50 flex overflow-x-hidden">
 
-    <main class="container mx-auto px-4 py-6 sm:py-8">
-      <div class="flex items-center gap-2 mb-6">
-        <a href="settings" class="text-gray-500 hover:text-green-600">
-          <div class="w-5 h-5 flex items-center justify-center">
-            <i class="ri-arrow-left-line"></i>
-          </div>
+  <!-- Main Content Area -->
+  <div class="flex-1 flex flex-col w-full transition-all duration-300 overflow-x-hidden">
+
+    <!-- Header: Updated to align right -->
+    <header class="flex items-center justify-center px-6 py-4 bg-gray-100 border-b border-gray-200">
+      <div>
+        <a href="settings.html" class="absolute top-4 left-4 text-gray-600 hover:text-light" aria-label="Back to settings">
+          <i class="ri-arrow-left-line text-xl"></i>
         </a>
-        <h1 class="text-xl sm:text-2xl font-bold text-gray-900">Profile</h1>
       </div>
+      
+      <div class="flex items-center space-x-4">
+        <span class="font-bold text-black-600 text-lg">Profile</span>
+      </div>
+    </header>
+    
+    <main class="p-6 space-y-6 mt-6">
 
-      <div class="grid grid-cols-1 md:grid-cols-1 gap-6">
-        <div class="md:col-span-2">
-          <section class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 mb-6">
-            <h3 class="text-lg font-bold text-gray-900 mb-4">Personal Information</h3>
+      <form class="space-y-4" method="POST" id="loginForm">
             
-            <form method="post" autocomplete="off">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
-                  <input type="text" value="<?= ucwords($getUser->firstname); ?>" name="firstname" class="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none outline-none text-sm sm:text-base">
-                </div>
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
-                  <input type="text" value="<?= ucwords($getUser->lastname); ?>" name="lastname" class="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none outline-none text-sm sm:text-base">
-                </div>
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                  <input type="email" value="<?= strtolower($getUser->email); ?>" name="email" readonly class="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none text-sm sm:text-base">
-                </div>
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                  <input type="tel" value="<?= $getUser->phone; ?>" name="phone" class="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none text-sm sm:text-base">
-                </div>
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-1">Gender</label>
-                  <select name="gender" class="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none text-sm sm:text-base" required>
-                    <option value="" selected>Select Gender</option>
-                    <option value="male" <?php if($getUser->gender == "male") { echo "selected"; } ?>>Male</option>
-                    <option value="female" <?php if($getUser->gender == "female") { echo "selected"; } ?>>Female</option>
-                  </select>
-                </div>
-              </div>
-              <div class="mt-4 sm:mt-6">
-                <label class="block text-sm font-medium text-gray-700 mb-1">Delivery Address</label>
-                <textarea class="w-full px-3 sm:px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none text-sm sm:text-base" name="address" rows="3"><?= $userAddress = $getUser->address ? $getUser->address : "N/A"; ?></textarea>
-              </div>
-              <div class="mt-4 sm:mt-6 flex justify-end">
-                <input type="submit" role="button" class="bg-green-700 w-full text-white px-4 py-3 rounded-button hover:bg-green-700 whitespace-nowrap text-sm sm:text-base" name="btnProfile" value="Save Changes">
-              </div>
-            </form>
-          </section>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="firstname">First Name</label>
+                <input type="firstname" id="firstname" name="firstname" required class="w-full px-3 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-light" placeholder="John" />
+            </div>
 
-        </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="lastname">Last Name</label>
+                <input type="lastname" id="lastname" name="lastname" required class="w-full px-3 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-light" placeholder="Doe" />
+            </div>
 
-      </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="email">Email</label>
+                <input type="email" id="email" name="email" required class="w-full px-3 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-light" placeholder="johndoe@example.com" />
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Phone No.</label>
+                <input type="tel" id="phone" name="phone" required class="w-full px-3 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-light" placeholder="08123456789" />
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Institution</label>
+                <input list="items" placeholder="Search Institution..." class="w-full border border-gray-300 rounded-sm px-4 py-3 focus:outline-none focus:ring-2 focus:ring-light" />
+                <datalist id="items">
+                  <option value="">University of Ibadan</option>
+                  <option value="">Lead City University</option>
+                  <option value="">Ajayi Crowther University</option>
+                  <option value="">Dominican University</option>
+                  <option value="">Koladaisi University</option>
+                  <option value="">The Polytechnic Ibadan</option>
+                  <option value="">Oke Ogun Polytechnic</option>
+                  <option value="">Eruwa Polytechnic</option>
+                  <option value="">School of Health Science Eleyele</option>
+                </datalist>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Level</label>
+                <input type="text" id="level" name="level" required class="w-full px-3 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-light" placeholder="Level" />
+            </div>
+            
+            <button type="submit" class="w-full bg-primary text-white font-bold py-3 px-4 rounded-sm hover:bg-light mt-4">Edit Changes</button>
+
+        </form>
+
     </main>
 
-  </body>
+  </div>
 
-  </html>
+</body>
+</html>

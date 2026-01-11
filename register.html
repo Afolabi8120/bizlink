@@ -40,6 +40,23 @@
                 <label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Phone No.</label>
                 <input type="tel" id="phone" name="phone" required class="w-full px-3 py-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-light" placeholder="08123456789" />
             </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="institutionType">Institution Type</label>
+                <select id="institutionType" class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-light">
+                    <option value="">Select Option</option>
+                    <option value="University">University</option>
+                    <option value="Polytechnic">Polytechnic</option>
+                    <option value="College of Education">College of Education</option>
+                  </select>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="institutionLevel">Levels</label>
+                <select id="institutionLevel" class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-light">
+                    <option value="">Select Level</option>
+                </select>
+            </div>
             
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1" for="password">Password</label>
@@ -60,6 +77,53 @@
     </div>
 
     <script>
+
+        const schoolLevelData = {
+          "University": [
+            { "level": "100 L" },
+            { "level": "200 L" },
+            { "level": "300 L" },
+            { "level": "400 L" },
+            { "level": "500 L" },
+            { "level": "600 L" },
+          ],
+          "Polytechnic": [
+            { "level": "ND I" },
+            { "level": "ND II" },
+            { "level": "ND III" },
+            { "level": "HND I" },
+            { "level": "HND II" }
+          ],
+          "College of Education": [
+            { "level": "100 L" },
+            { "level": "200 L" },
+            { "level": "300 L" }
+          ]
+      };
+
+        const institutionType = document.getElementById('institutionType');
+        const levelSelect = document.getElementById('institutionLevel');
+
+        // When user selects a state
+        institutionType.addEventListener('change', function() {
+          const selectedInstitution = this.value;
+
+          levelSelect.innerHTML = '<option value="">--Select Level--</option>';
+          levelSelect.disabled = true;
+
+          if (selectedInstitution && schoolLevelData[selectedInstitution]) {
+            const levels = schoolLevelData[selectedInstitution];
+            // Populate levels dropdown
+            levels.forEach(level => {
+              const option = document.createElement('option');
+              option.value = level.level;
+              option.textContent = level.level;
+              levelSelect.appendChild(option);
+            });
+            levelSelect.disabled = false; // Enable after populating
+          }
+        });
+        
         const togglePassword = document.getElementById('togglePassword');
         const passwordInput = document.getElementById('password');
 
