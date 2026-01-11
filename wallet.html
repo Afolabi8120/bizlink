@@ -129,19 +129,21 @@
     const amountDiv = document.getElementById('walletAmount');
     const eyeIcon = document.getElementById('eyeIcon');
 
+    amountDiv.textContent = '****';
+    eyeIcon.classList.add('ri-eye-off-line');
     let isHidden = false;
 
     toggleBtn.addEventListener('click', () => {
-      if (isHidden) {
+      if (!isHidden) {
         amountDiv.textContent = '₦ 156,605.00';
         eyeIcon.classList.remove('ri-eye-off-line');
         eyeIcon.classList.add('ri-eye-line');
-        isHidden = false;
+        isHidden = true;
       } else {
         amountDiv.textContent = '****';
         eyeIcon.classList.remove('ri-eye-line');
         eyeIcon.classList.add('ri-eye-off-line');
-        isHidden = true;
+        isHidden = false;
       }
     });
 
