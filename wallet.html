@@ -26,26 +26,34 @@
     </header>
 
     <!-- Wallet Card -->
-    <div class="p-6 flex flex-col items-center space-y-4">
-      <div class="relative w-80 rounded-xl bg-gradient-to-tr from-primary via-light to-primary p-4 shadow-lg text-white">
-        
+    <div class="relative bg-primary rounded-2xl p-6 mb-4 text-white overflow-hidden shadow-lg">
+      
+      <div class="absolute inset-0 opacity-20 bg-gradient-to-br from-green-400 to-green-900 rounded-2xl"></div>
+
+      <div class="relative z-10 flex flex-col justify-between h-full">
+        <!-- Top Row -->
         <div class="flex justify-between items-center mb-4">
-          <div class="flex items-center space-x-2">
+          <div class="flex items-center gap-2">
             <i class="ri-wallet-line text-xl"></i>
-            <span class="font-semibold text-sm">My Wallet</span>
+            <span class="text-sm opacity-90 font-semibold">My Wallet</span>
           </div>
           <button id="toggleAmount" class="focus:outline-none">
             <i class="ri-eye-line text-xl" id="eyeIcon"></i>
           </button>
         </div>
-        
-        <div class="text-3xl font-bold mb-4" id="walletAmount">₦1,250.00</div>
-        
+
+        <!-- Balance -->
+        <h2 id="walletAmount" class="text-3xl font-bold mb-6">
+          ₦ 156,605.00
+        </h2>
+
         <button class="w-full bg-white text-primary font-semibold py-2 px-4 rounded shadow hover:bg-gray-100 text-sm flex items-center justify-center">
           <i class="ri-add-line mr-2"></i> Fund Wallet
         </button>
+
       </div>
     </div>
+
 
     <!-- Funding History Table -->
     <div>
@@ -105,7 +113,7 @@
 
     toggleBtn.addEventListener('click', () => {
       if (isHidden) {
-        amountDiv.textContent = '$1,250.00';
+        amountDiv.textContent = '₦ 156,605.00';
         eyeIcon.classList.remove('ri-eye-off-line');
         eyeIcon.classList.add('ri-eye-line');
         isHidden = false;
