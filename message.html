@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="theme-color" content="#1A73E8" />
+ <title>Message</title>
+ <script src="https://cdn.tailwindcss.com"></script>
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+ <script src="tailwind.config.js"></script>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen font-Urbanist">
+
+  <!-- Header -->
+  <header class="relative flex items-center justify-center px-6 py-4 bg-gray-100 border-b border-gray-200 shadow-sm">
+    <a href="chat.html" class="absolute top-4 left-4 text-gray-600 hover:text-primary" aria-label="Back to dashboard">
+      <i class="ri-arrow-left-line text-xl"></i>
+    </a>
+    <h1 class="text-lg font-bold text-gray-800">Alice Johnson</h1>
+  </header>
+
+  <!-- Chat messages area -->
+  <main class="flex-1 p-4 overflow-y-auto space-y-4 bg-gray-50">
+    <!-- Sender message (left) -->
+    <div class="flex items-start space-x-4">
+      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d" alt="Sender" class="w-12 h-12 rounded-full object-cover" />
+      <div class="max-w-xs bg-white rounded-xl p-3 shadow-md relative">
+        <div class="text-gray-700 text-sm">Hey! Are you available for a quick chat?</div>
+        <div class="text-xs text-gray-400 absolute bottom-1 right-3">2:45 PM</div>
+      </div>
+    </div>
+
+    <!-- Receiver message (right) -->
+    <div class="flex items-start justify-end space-x-4">
+      <div class="max-w-xs bg-primary text-white rounded-xl p-3 shadow-md relative">
+        <div class="">Yes, I am! What's up?</div>
+        <div class="text-xs text-gray-200 absolute bottom-1 right-3">2:47 PM</div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde" alt="Receiver" class="w-12 h-12 rounded-full object-cover" />
+    </div>
+
+    <!-- Sender message (left) -->
+    <div class="flex items-start space-x-4">
+      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d" alt="Sender" class="w-12 h-12 rounded-full object-cover" />
+      <div class="max-w-xs bg-white rounded-xl p-3 shadow-md relative">
+        <div class="text-gray-700 text-sm">Can you send me the latest report?</div>
+        <div class="text-xs text-gray-400 absolute bottom-1 right-3">1:30 PM</div>
+      </div>
+    </div>
+
+    <!-- Receiver message (right) -->
+    <div class="flex items-start justify-end space-x-4">
+      <div class="max-w-xs bg-primary text-white rounded-xl p-3 shadow-md relative">
+        <div>Sure, I'll send it now.</div>
+        <div class="text-xs text-gray-200 absolute bottom-1 right-3">1:32 PM</div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde" alt="Receiver" class="w-12 h-12 rounded-full object-cover" />
+    </div>
+
+    <!-- Add more messages as needed -->
+  </main>
+
+  <!-- Optional: Input area -->
+  <div class="px-4 py-3 bg-gray-100 border-t border-gray-200">
+    <div class="flex items-center space-x-3">
+      <input type="text" placeholder="Type a message..." class="flex-1 px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" />
+      <button class="bg-primary p-2 rounded-full text-white hover:bg-blue-600 transition">
+        <i class="ri-send-plane-line"></i>
+      </button>
+    </div>
+  </div>
+</body>
+</html>
